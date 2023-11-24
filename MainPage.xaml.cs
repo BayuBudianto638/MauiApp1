@@ -12,20 +12,20 @@ namespace MauiApp1
 
         private void OnCalculateClicked(object sender, EventArgs e)
         {
-            var customer = new Customer();
-            customer.Name = CustomerName.Text;
+            //var customer = new Customer();
+            //customer.Name = CustomerName.Text;
 
-            var custAppService = new CustomerAppService();
+            //var custAppService = new CustomerAppService();
 
-            var (isResult, isMsg) = custAppService.Save(customer);
-            if (isResult == true)
-            {
-                DisplayAlert("Sukses", "Sukses", "OK");
-            }
-            else
-            {
-                DisplayAlert("Gagal", "Gagal", "OK");
-            }
+            //var (isResult, isMsg) = custAppService.Save(customer);
+            //if (isResult == true)
+            //{
+            //    DisplayAlert("Sukses", "Sukses", "OK");
+            //}
+            //else
+            //{
+            //    DisplayAlert("Gagal", "Gagal", "OK");
+            //}
         }
     }
 

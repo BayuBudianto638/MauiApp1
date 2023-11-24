@@ -3,7 +3,25 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MauiApp1.MainPage">
 
-    <ScrollView>
+    <ContentPage.MenuBarItems>
+        <MenuBarItem Text="File">
+            <MenuFlyoutItem Text="Exit"
+                            Command="{Binding ExitCommand}" />
+        </MenuBarItem>
+        <MenuBarItem Text="Master">
+          
+            <MenuFlyoutItem Text="Customer"
+                            Command="{Binding AddLocationCommand}" />
+            <MenuFlyoutItem Text="Products"
+                            Command="{Binding EditLocationCommand}" />
+        </MenuBarItem>
+        <MenuBarItem Text="Transaction">
+            <MenuFlyoutItem Text="Sales"
+                            Command="{Binding RefreshCommand}" />
+        </MenuBarItem>
+    </ContentPage.MenuBarItems>
+
+    <!--<ScrollView>
         <VerticalStackLayout
             Padding="30,0"
             Spacing="25">
@@ -30,6 +48,6 @@
                 Clicked="OnCalculateClicked"
                 HorizontalOptions="Fill" />
         </VerticalStackLayout>
-    </ScrollView>
+    </ScrollView>-->
 
 </ContentPage>
