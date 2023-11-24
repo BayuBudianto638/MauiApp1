@@ -12,8 +12,9 @@ public partial class CustomerPage : ContentPage
         BindingContext = new CustomerAppService().GetAll();
     }
 
-    private async void OnSaveClick(object sender, EventArgs e)
+    private async void OnAddClick(object sender, EventArgs e)
     {
+        await DisplayAlert("Add", "Add Customer", "OK");
         //var customer = new Customer();
         //customer.Name = CustomerName.Text;
 

@@ -5,6 +5,13 @@
              Title="CustomerPage">
 
     <StackLayout Margin="20">
+        <Button
+            x:Name="AddBtn"
+            Text="Add" 
+            SemanticProperties.Hint="Click add customer"
+            Clicked="OnAddClick"
+            HorizontalOptions="Fill" />     
+
         <ListView x:Name="listView"
               ItemsSource="{Binding Customers}">
             <ListView.ItemTemplate>
@@ -30,7 +37,7 @@
                                 <ColumnDefinition Width="Auto" />
                                 <ColumnDefinition Width="Auto" />
                             </Grid.ColumnDefinitions>
-                            
+
                             <Label Grid.Column="1" 
                                Text="{Binding Id}" 
                                FontAttributes="Bold" />
