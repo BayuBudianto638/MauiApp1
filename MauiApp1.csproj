@@ -67,6 +67,14 @@
 
 	<ItemGroup>
 	  <Folder Include="Applications\Customers\Dto\" />
+	  <Folder Include="Applications\Products\Dto\" />
+	  <Folder Include="Applications\Sales\Dto\" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <MauiXaml Update="Views\CustomerPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	</ItemGroup>
 
 </Project>

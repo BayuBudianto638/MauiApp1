@@ -1,5 +1,4 @@
-﻿using MauiApp1.Applications.Customers;
-using MauiApp1.Models;
+﻿using MauiApp1.Views;
 
 namespace MauiApp1
 {
@@ -10,22 +9,9 @@ namespace MauiApp1
             InitializeComponent();
         }
 
-        private void OnCalculateClicked(object sender, EventArgs e)
+        private async void OnCustomerClick(object sender, EventArgs e)
         {
-            //var customer = new Customer();
-            //customer.Name = CustomerName.Text;
-
-            //var custAppService = new CustomerAppService();
-
-            //var (isResult, isMsg) = custAppService.Save(customer);
-            //if (isResult == true)
-            //{
-            //    DisplayAlert("Sukses", "Sukses", "OK");
-            //}
-            //else
-            //{
-            //    DisplayAlert("Gagal", "Gagal", "OK");
-            //}
+            await Navigation.PushAsync(new CustomerPage());            
         }
     }
 

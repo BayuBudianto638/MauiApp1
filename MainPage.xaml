@@ -11,7 +11,7 @@
         <MenuBarItem Text="Master">
           
             <MenuFlyoutItem Text="Customer"
-                            Command="{Binding AddLocationCommand}" />
+                            Clicked="OnCustomerClick" />
             <MenuFlyoutItem Text="Products"
                             Command="{Binding EditLocationCommand}" />
         </MenuBarItem>
@@ -19,35 +19,6 @@
             <MenuFlyoutItem Text="Sales"
                             Command="{Binding RefreshCommand}" />
         </MenuBarItem>
-    </ContentPage.MenuBarItems>
-
-    <!--<ScrollView>
-        <VerticalStackLayout
-            Padding="30,0"
-            Spacing="25">
-            <Image
-                Source="dotnet_bot.png"
-                HeightRequest="185"
-                Aspect="AspectFit"
-                SemanticProperties.Description="dot net bot in a race car number eight" />
-
-            <Entry 
-               x:Name="CustomerId" 
-               Placeholder="Customer Id"
-               Text="{Binding A, Mode=TwoWay}" />  
-         
-            <Entry 
-             x:Name="CustomerName" 
-             Placeholder="Customer Name"
-             Text="{Binding B, Mode=TwoWay}" />
-
-            <Button
-                x:Name="SaveBtn"
-                Text="Save" 
-                SemanticProperties.Hint="Click to calculate value"
-                Clicked="OnCalculateClicked"
-                HorizontalOptions="Fill" />
-        </VerticalStackLayout>
-    </ScrollView>-->
+    </ContentPage.MenuBarItems>   
 
 </ContentPage>
