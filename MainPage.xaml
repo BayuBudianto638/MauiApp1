@@ -13,13 +13,19 @@
                 Aspect="AspectFit"
                 SemanticProperties.Description="dot net bot in a race car number eight" />
 
-            <Entry Placeholder="Enter value for 'a'"
+            <Entry 
+               x:Name="textA" 
+               Placeholder="Enter value for 'a'"
                Text="{Binding A, Mode=TwoWay}" />  
          
-            <Entry Placeholder="Enter value for 'b'"
+            <Entry 
+             x:Name="textB" 
+             Placeholder="Enter value for 'b'"
              Text="{Binding B, Mode=TwoWay}" />
 
-            <Label Text="{Binding Result}" />
+            <Label 
+                x:Name="textResult" 
+                Text="{Binding Result}" />
 
             <Button
                 x:Name="CalculateBtn"

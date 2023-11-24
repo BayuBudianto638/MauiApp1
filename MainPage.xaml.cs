@@ -12,8 +12,16 @@
 
         private void OnCalculateClicked(object sender, EventArgs e)
         {
+            A = Convert.ToInt32(textA.Text);
+            B = Convert.ToInt32(textB.Text);
+
             Result = A + B;
-            DisplayAlert("Hello", "This is a Maui Message Dialog!", "OK");
+
+            textResult.Text = Result.ToString();
+                       
+            SemanticScreenReader.Announce(textResult.Text);
+
+            //DisplayAlert("Hello", "This is a Maui Message Dialog!", "OK");
         }
     }
 
