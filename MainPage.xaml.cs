@@ -18,10 +18,6 @@
             Result = A + B;
 
             textResult.Text = Result.ToString();
-                       
-            SemanticScreenReader.Announce(textResult.Text);
-
-            //DisplayAlert("Hello", "This is a Maui Message Dialog!", "OK");
         }
     }
 
