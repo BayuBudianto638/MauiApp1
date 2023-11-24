@@ -1,10 +1,10 @@
-﻿namespace MauiApp1
+﻿using MauiApp1.Applications.Customers;
+using MauiApp1.Models;
+
+namespace MauiApp1
 {
     public partial class MainPage : ContentPage
     {
-        public int A { get; set; }
-        public int B { get; set; }
-        public int Result { get; set; }
         public MainPage()
         {
             InitializeComponent();
@@ -12,12 +12,20 @@
 
         private void OnCalculateClicked(object sender, EventArgs e)
         {
-            A = Convert.ToInt32(textA.Text);
-            B = Convert.ToInt32(textB.Text);
+            var customer = new Customer();
+            customer.Name = CustomerName.Text;
 
-            Result = A + B;
+            var custAppService = new CustomerAppService();
 
-            textResult.Text = Result.ToString();
+            var (isResult, isMsg) = custAppService.Save(customer);
+            if (isResult == true)
+            {
+                DisplayAlert("Sukses", "Sukses", "OK");
+            }
+            else
+            {
+                DisplayAlert("Gagal", "Gagal", "OK");
+            }
         }
     }
 

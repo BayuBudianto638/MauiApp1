@@ -14,22 +14,18 @@
                 SemanticProperties.Description="dot net bot in a race car number eight" />
 
             <Entry 
-               x:Name="textA" 
-               Placeholder="Enter value for 'a'"
+               x:Name="CustomerId" 
+               Placeholder="Customer Id"
                Text="{Binding A, Mode=TwoWay}" />  
          
             <Entry 
-             x:Name="textB" 
-             Placeholder="Enter value for 'b'"
+             x:Name="CustomerName" 
+             Placeholder="Customer Name"
              Text="{Binding B, Mode=TwoWay}" />
 
-            <Label 
-                x:Name="textResult" 
-                Text="{Binding Result}" />
-
             <Button
-                x:Name="CalculateBtn"
-                Text="Calculate" 
+                x:Name="SaveBtn"
+                Text="Save" 
                 SemanticProperties.Hint="Click to calculate value"
                 Clicked="OnCalculateClicked"
                 HorizontalOptions="Fill" />
