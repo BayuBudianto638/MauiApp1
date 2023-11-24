@@ -9,7 +9,7 @@ namespace MauiApp1.Applications.Customers
     {
         private readonly string connString = @"Server=FAIRUZ-PC\SQLEXPRESS;Database=TEST;Trusted_Connection=True;TrustServerCertificate=True;";
 
-        public bool Delete(int Id)
+        public async Task<bool> Delete(int Id)
         {
             try
             {
@@ -24,15 +24,15 @@ namespace MauiApp1.Applications.Customers
                     {
                     }
                 }
-                return true;
+                return await Task.Run(() => true);
             }
             catch (DbException db)
             {
-                return false;
+                return await Task.Run(() => false);
             }
         }
 
-        public (bool, string) Save(Customer customer)
+        public async Task<(bool, string)> Save(Customer customer)
         {
             try
             {
@@ -56,15 +56,15 @@ namespace MauiApp1.Applications.Customers
                     connection.Close();
                 }
 
-                return (true, "SUKSES");
+                return await Task.Run(() => (true, "SUKSES"));
             }
             catch (DbException db)
             {
-                return (false, "GAGAL");
+                return await Task.Run(() => (false, "GAGAL"));
             }
         }
 
-        public bool Update(Customer customer)
+        public async Task<bool> Update(Customer customer)
         {
             try
             {
@@ -87,11 +87,11 @@ namespace MauiApp1.Applications.Customers
                     connection.Close();
                 }
 
-                return true;
+                return await Task.Run(() => true);
             }
             catch (DbException db)
             {
-                return false;
+                return await Task.Run(() => false);
             }
         }
     }
