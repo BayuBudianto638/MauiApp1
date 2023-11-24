@@ -1,14 +1,17 @@
 ﻿using Dapper;
 using MauiApp1.Models;
 using Microsoft.Data.SqlClient;
+using System.ComponentModel;
 using System.Data.Common;
+using System.Runtime.CompilerServices;
+using System.Windows.Input;
 
 namespace MauiApp1.Applications.Customers
 {
     internal class CustomerAppService : ICustomerAppService
     {
         private readonly string connString = @"Server=FAIRUZ-PC\SQLEXPRESS;Database=TEST;Trusted_Connection=True;TrustServerCertificate=True;";
-
+        
         public async Task<bool> Delete(int Id)
         {
             try
@@ -30,6 +33,20 @@ namespace MauiApp1.Applications.Customers
             {
                 return await Task.Run(() => false);
             }
+        }
+
+        public async Task<List<Customer>> GetAll()
+        {
+            var listCustomer = new List<Customer>();
+
+            using (var connection = new SqlConnection(connString))
+            {
+                connection.Open();
+                listCustomer = connection.Query<Customer>(@"SELECT Id, Name FROM Customer").ToList();
+                connection.Close();
+            }
+
+            return listCustomer;
         }
 
         public async Task<(bool, string)> Save(Customer customer)
@@ -93,6 +110,6 @@ namespace MauiApp1.Applications.Customers
             {
                 return await Task.Run(() => false);
             }
-        }
+        }        
     }
 }

@@ -12,5 +12,6 @@ namespace MauiApp1.Applications.Customers
         Task<(bool, string)> Save(Customer customer);
         Task<bool> Update(Customer customer);
         Task<bool> Delete(int Id);
+        Task<List<Customer>> GetAll();
     }
 }

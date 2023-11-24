@@ -8,6 +8,8 @@ public partial class CustomerPage : ContentPage
     public CustomerPage()
     {
         InitializeComponent();
+
+        BindingContext = new CustomerAppService().GetAll();
     }
 
     private async void OnSaveClick(object sender, EventArgs e)
