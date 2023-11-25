@@ -5,11 +5,15 @@ namespace MauiApp1.Views;
 
 public partial class CustomerPage : ContentPage
 {
+    private readonly ICustomerAppService data = new CustomerAppService();
+
     public CustomerPage()
     {
         InitializeComponent();
 
         BindingContext = new CustomerAppService().GetAll();
+        //_iCustomerAppService = iCustomerAppService;
+        
     }
 
     private async void OnAddClick(object sender, EventArgs e)
