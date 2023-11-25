@@ -13,7 +13,7 @@ public partial class CustomerPage : ContentPage
 
         BindingContext = new CustomerAppService().GetAll();
         //_iCustomerAppService = iCustomerAppService;
-        
+
     }
 
     private async void OnAddClick(object sender, EventArgs e)

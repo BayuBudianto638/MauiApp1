@@ -1,4 +1,5 @@
-﻿using MauiApp1.Views;
+﻿using MauiApp1.Applications.Customers;
+using MauiApp1.Views;
 
 namespace MauiApp1
 {
