@@ -9,9 +9,9 @@ namespace MauiApp1.Applications.Customers
 {
     internal interface ICustomerAppService
     {
-        Task<(bool, string)> Save(Customer customer);
-        Task<bool> Update(Customer customer);
+        Task<(bool, string)> Save(CustomerModel customer);
+        Task<bool> Update(CustomerModel customer);
         Task<bool> Delete(int Id);
-        Task<List<Customer>> GetAll();
+        Task<List<CustomerModel>> GetAll();
     }
 }

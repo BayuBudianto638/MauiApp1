@@ -13,11 +13,11 @@
             <MenuFlyoutItem Text="Customer"
                             Clicked="OnCustomerClick" />
             <MenuFlyoutItem Text="Products"
-                            Command="{Binding EditLocationCommand}" />
+                            Clicked="OnProductClick" />
         </MenuBarItem>
         <MenuBarItem Text="Transaction">
             <MenuFlyoutItem Text="Sales"
-                            Command="{Binding RefreshCommand}" />
+                            Clicked="OnSalesClick" />
         </MenuBarItem>
     </ContentPage.MenuBarItems>   
 

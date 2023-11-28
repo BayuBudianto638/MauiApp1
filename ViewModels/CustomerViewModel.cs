@@ -14,12 +14,12 @@ namespace MauiApp1.ViewModels
 {
     internal class CustomerViewModel : INotifyPropertyChanged
     {
-        readonly IList<Customer> source;
-        Customer selectedCustomer;
+        readonly IList<CustomerModel> source;
+        CustomerModel selectedCustomer;
 
-        public ObservableCollection<Customer> Customers { get; set; }
+        public ObservableCollection<CustomerModel> Customers { get; set; }
 
-        public Customer SelectedCustomer
+        public CustomerModel SelectedCustomer
         {
             get
             {
@@ -39,7 +39,7 @@ namespace MauiApp1.ViewModels
 
         public CustomerViewModel()
         {
-            source = new List<Customer>();
+            source = new List<CustomerModel>();
             CreateCustomerCollection();
 
 
@@ -54,7 +54,7 @@ namespace MauiApp1.ViewModels
 
             var data = await customerAppService.GetAll();
 
-            Customers = new ObservableCollection<Customer>(data);
+            Customers = new ObservableCollection<CustomerModel>(data);
         }
 
         void RemoveCustomer()

@@ -1,5 +1,6 @@
 using MauiApp1.Applications.Customers;
 using MauiApp1.Models;
+using MauiApp1.Views.Customer;
 
 namespace MauiApp1.Views;
 
@@ -12,26 +13,11 @@ public partial class CustomerPage : ContentPage
         InitializeComponent();
 
         BindingContext = new CustomerAppService().GetAll();
-        //_iCustomerAppService = iCustomerAppService;
 
     }
 
     private async void OnAddClick(object sender, EventArgs e)
     {
-        await DisplayAlert("Add", "Add Customer", "OK");
-        //var customer = new Customer();
-        //customer.Name = CustomerName.Text;
-
-        //var custAppService = new CustomerAppService();
-
-        //var (isResult, isMsg) = await custAppService.Save(customer);
-        //if (isResult == true)
-        //{
-        //    await DisplayAlert("Sukses", "Sukses", "OK");
-        //}
-        //else
-        //{
-        //    await DisplayAlert("Gagal", "Gagal", "OK");
-        //}
+        await Navigation.PushAsync(new CustomerPageAdd());
     }
 }

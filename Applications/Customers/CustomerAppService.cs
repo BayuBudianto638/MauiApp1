@@ -35,21 +35,21 @@ namespace MauiApp1.Applications.Customers
             }
         }
 
-        public async Task<List<Customer>> GetAll()
+        public async Task<List<CustomerModel>> GetAll()
         {
-            var listCustomer = new List<Customer>();
+            var listCustomer = new List<CustomerModel>();
 
             using (var connection = new SqlConnection(connString))
             {
                 connection.Open();
-                listCustomer = connection.Query<Customer>(@"SELECT Id, Name FROM Customer").ToList();
+                listCustomer = connection.Query<CustomerModel>(@"SELECT Id, Name FROM Customer").ToList();
                 connection.Close();
             }
 
             return listCustomer;
         }
 
-        public async Task<(bool, string)> Save(Customer customer)
+        public async Task<(bool, string)> Save(CustomerModel customer)
         {
             try
             {
@@ -81,7 +81,7 @@ namespace MauiApp1.Applications.Customers
             }
         }
 
-        public async Task<bool> Update(Customer customer)
+        public async Task<bool> Update(CustomerModel customer)
         {
             try
             {
