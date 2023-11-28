@@ -8,5 +8,9 @@ namespace MauiApp1.Models
 {
     internal class SalesDetail
     {
+        public int Id { get; set; }
+        public int SalesId { get; set; }
+        public int ProductId { get; set; }
+        public int Qty { get; set; }
     }
 }

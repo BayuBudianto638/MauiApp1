@@ -8,5 +8,10 @@ namespace MauiApp1.Models
 {
     internal class SalesHeader
     {
+        public int Id { get; set; }
+        public string Code { get; set; }
+        public int CustomerId { get; set; }
+        public DateTime TranDate { get; set; }
+        public int Total { get; set; }
     }
 }
