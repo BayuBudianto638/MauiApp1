@@ -3,10 +3,32 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MauiApp1.Views.Customer.CustomerPageAdd"
              Title="CustomerPageAdd">
-    <VerticalStackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-    </VerticalStackLayout>
+    <ScrollView>
+        <VerticalStackLayout
+        Padding="30,0"
+        Spacing="25">
+            <Image
+            Source="dotnet_bot.png"
+            HeightRequest="185"
+            Aspect="AspectFit"
+            SemanticProperties.Description="dot net bot in a race car number eight" />
+
+            <Entry 
+           x:Name="CustomerId" 
+           Placeholder="Customer Id"
+           Text="{Binding A, Mode=TwoWay}" />
+
+            <Entry 
+         x:Name="CustomerName" 
+         Placeholder="Customer Name"
+         Text="{Binding B, Mode=TwoWay}" />
+
+            <Button
+            x:Name="SaveBtn"
+            Text="Save" 
+            SemanticProperties.Hint="Click to calculate value"
+            Clicked="OnSaveClick"
+            HorizontalOptions="Fill" />
+        </VerticalStackLayout>
+    </ScrollView>
 </ContentPage>
