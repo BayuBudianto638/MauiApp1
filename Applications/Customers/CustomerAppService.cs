@@ -46,7 +46,7 @@ namespace MauiApp1.Applications.Customers
                 connection.Close();
             }
 
-            return listCustomer;
+            return await Task.Run(() => listCustomer); 
         }
 
         public async Task<(bool, string)> Save(CustomerModel customer)

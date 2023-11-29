@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MauiApp1.Models
 {
-    internal class Product
+    public class ProductModel
     {
         public int Id { get; set; }
         public string Name { get; set; }

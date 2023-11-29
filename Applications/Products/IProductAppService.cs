@@ -9,9 +9,9 @@ namespace MauiApp1.Applications.Products
 {
     internal interface IProductAppService
     {
-        Task<(bool, string)> Save(Product product);
-        Task<bool> Update(Product product);
+        Task<(bool, string)> Save(ProductModel product);
+        Task<bool> Update(ProductModel product);
         Task<bool> Delete(int Id);
-        Task<List<Product>> GetAll();
+        Task<List<ProductModel>> GetAll();
     }
 }

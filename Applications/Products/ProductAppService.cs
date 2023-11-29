@@ -23,7 +23,7 @@ namespace MauiApp1.Applications.Products
                     connection.Open();
                     try
                     {
-                        connection.Execute("DELETE FROM Product WHERE ProductId = @Id", new { Id });
+                        connection.Execute("DELETE FROM Product WHERE Id = @Id", new { Id });
                     }
                     catch (DbException dbex)
                     {
@@ -37,21 +37,21 @@ namespace MauiApp1.Applications.Products
             }
         }
 
-        public async Task<List<Product>> GetAll()
+        public async Task<List<ProductModel>> GetAll()
         {
-            var listProduct = new List<Product>();
+            var listProduct = new List<ProductModel>();
 
             using (var connection = new SqlConnection(connString))
             {
                 connection.Open();
-                listProduct = connection.Query<Product>(@"SELECT Id, Name FROM Product").ToList();
+                listProduct = connection.Query<ProductModel>(@"SELECT Id, Name, Price FROM Product").ToList();
                 connection.Close();
             }
 
             return listProduct;
         }
 
-        public async Task<(bool, string)> Save(Product Product)
+        public async Task<(bool, string)> Save(ProductModel Product)
         {
             try
             {
@@ -60,18 +60,19 @@ namespace MauiApp1.Applications.Products
                     connection.Open();
                     try
                     {
-                        connection.Execute("INSERT INTO Product(Name) VALUES " +
-                            "(@Name) ",
+                        connection.Execute("INSERT INTO Product(Name, Price) VALUES " +
+                            "(@Name, @Price) ",
                             new
                             {
-                                Product.Name
+                                Product.Name,
+                                Product.Price
                             });
-
                     }
                     catch (DbException dbex)
                     {
 
                     }
+
                     connection.Close();
                 }
 
@@ -83,7 +84,7 @@ namespace MauiApp1.Applications.Products
             }
         }
 
-        public async Task<bool> Update(Product Product)
+        public async Task<bool> Update(ProductModel Product)
         {
             try
             {
@@ -92,17 +93,20 @@ namespace MauiApp1.Applications.Products
                     connection.Open();
                     try
                     {
-                        connection.Execute("UPDATE Product SET ProductName = @ProductName " +
-                        "WHERE ProductId = @ProductId ",
+                        connection.Execute("UPDATE Product SET Name = @Name, " +
+                            "Price = @Price " +
+                        "WHERE Id = @Id ",
                         new
                         {
                             Product.Id,
-                            Product.Name
+                            Product.Name,
+                            Product.Price
                         });
                     }
                     catch (DbException dbex)
                     {
                     }
+
                     connection.Close();
                 }
 

@@ -21,7 +21,7 @@
             <Button
             x:Name="SaveBtn"
             Text="Save" 
-            SemanticProperties.Hint="Click to calculate value"
+            SemanticProperties.Hint="Click to save value"
             Clicked="OnSaveClick"
             HorizontalOptions="Fill" />
         </VerticalStackLayout>

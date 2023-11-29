@@ -1,11 +1,11 @@
 using MauiApp1.Applications.Products;
 using MauiApp1.Models;
 
-namespace MauiApp1.Views.Product;
+namespace MauiApp1.Views.Products;
 
-public partial class ProductPageAdd : ContentPage
+public partial class ProductPageDetail : ContentPage
 {
-	public ProductPageAdd()
+	public ProductPageDetail(ProductModel productModel)
 	{
 		InitializeComponent();
 	}

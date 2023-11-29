@@ -1,26 +1,28 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="MauiApp1.Views.Product.ProductPageAdd"
-             Title="ProductPageAdd">
+             x:Class="MauiApp1.Views.Customer.CustomerPageDetail"
+             Title="CustomerPageDetail">
+
     <ScrollView>
         <VerticalStackLayout
     Padding="30,0"
     Spacing="25">
+
             <Entry 
-       x:Name="ProductName" 
-       Placeholder="Product Name"
+       x:Name="CustomerId" 
+       Placeholder="Customer Id"
        Text="{Binding A, Mode=TwoWay}" />
 
             <Entry 
-     x:Name="ProductPrice" 
-     Placeholder="Product Price"
+     x:Name="CustomerName" 
+     Placeholder="Customer Name"
      Text="{Binding B, Mode=TwoWay}" />
 
             <Button
         x:Name="SaveBtn"
         Text="Save" 
-        SemanticProperties.Hint="Click to save value"
+        SemanticProperties.Hint="Click to calculate value"
         Clicked="OnSaveClick"
         HorizontalOptions="Fill" />
         </VerticalStackLayout>
