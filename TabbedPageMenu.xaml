@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiApp1.TabbedPageMenu"
+             Title="TabbedPageMenu"
+            BarBackgroundColor="DarkBlue"
+            BarTextColor="Black"
+            SelectedTabColor="DarkRed"
+            UnselectedTabColor="Cyan">
+    <ContentPage Title="Page 1" IconImageSource="dotnet_bot.png">
+        <Label
+        Text="Hello from Flyout"
+        HorizontalTextAlignment="Center"
+        VerticalTextAlignment="Center"/>
+    </ContentPage>
+
+    <ContentPage Title="Page 2" IconImageSource="dotnet_bot.png">
+        <Label
+        Text="Hello from Flyout"
+        HorizontalTextAlignment="Center"
+        VerticalTextAlignment="Center"/>
+    </ContentPage>
+</TabbedPage>

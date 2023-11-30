@@ -6,7 +6,7 @@
         {
             InitializeComponent();
 
-            MainPage = new FlyoutPageMenu();
+            MainPage = new TabbedPageMenu();
         }
     }
 }
