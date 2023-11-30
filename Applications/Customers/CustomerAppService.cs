@@ -21,7 +21,7 @@ namespace MauiApp1.Applications.Customers
                     connection.Open();
                     try
                     {
-                        connection.Execute("DELETE FROM Customer WHERE CustomerId = @Id", new { Id });
+                        connection.Execute("DELETE FROM Customer WHERE Id = @Id", new { Id });
                     }
                     catch (DbException dbex)
                     {

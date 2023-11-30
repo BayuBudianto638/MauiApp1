@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace MauiApp1.Applications.Customers
 {
-    internal interface ICustomerAppService
+    public interface ICustomerAppService
     {
         Task<(bool, string)> Save(CustomerModel customer);
         Task<bool> Update(CustomerModel customer);

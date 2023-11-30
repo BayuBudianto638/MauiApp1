@@ -1,4 +1,5 @@
 ﻿using MauiApp1.Applications.Customers;
+using MauiApp1.ViewModels;
 using MauiApp1.Views;
 using MauiApp1.Views.Sales;
 
@@ -13,7 +14,11 @@ namespace MauiApp1
 
         private async void OnCustomerClick(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new CustomerPage());            
+            var customerAppService = new CustomerAppService(); 
+            var customerViewModel = new CustomerViewModel(customerAppService, Navigation);
+            var customerPage = new CustomerPage(customerViewModel);
+
+            await Navigation.PushAsync(customerPage);            
         }
 
         private async void OnProductClick(object sender, EventArgs e)
