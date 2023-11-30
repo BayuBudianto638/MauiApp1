@@ -81,7 +81,7 @@ namespace MauiApp1.ViewModels
                     }
                     else
                     {
-                        await Shell.Current.DisplayAlert("Error", "Product updation error", "Ok");
+                        await Shell.Current.DisplayAlert("Error", "Customer updation error", "Ok");
                         return;
                     }
                 }
