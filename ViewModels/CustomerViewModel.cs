@@ -76,7 +76,7 @@ namespace MauiApp1.ViewModels
                     var isUpdate = await _customerAppService.Update(OperatingCostumer);
                     if (isUpdate)
                     {
-                        await Shell.Current.DisplayAlert("Success", "Customer updation success", "Ok");
+                        await Shell.Current.DisplayAlert("Success", "Customer creation success", "Ok");
                         return;
                     }
                     else
