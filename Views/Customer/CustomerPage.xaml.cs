@@ -7,8 +7,6 @@ namespace MauiApp1.Views;
 
 public partial class CustomerPage : ContentPage
 {
-    //private readonly ICustomerAppService data = new CustomerAppService();
-
     private readonly CustomerViewModel _viewModel;
 
     public CustomerPage(CustomerViewModel viewModel)
@@ -28,26 +26,4 @@ public partial class CustomerPage : ContentPage
         base.OnAppearing();
         await _viewModel.LoadCustomersAsync();
     }
-
-    //private async void OnEditClicked(object sender, EventArgs e)
-    //{
-    //    var selectedItem = (CustomerModel)((Button)sender).BindingContext;
-    //    await Navigation.PushAsync(new CustomerPageDetail(selectedItem));
-    //}
-
-    //private async void OnDeleteClicked(object sender, EventArgs e)
-    //{
-    //    bool answer = await DisplayAlert("Question?", "Do you want to delete this record?", "Yes", "No");
-
-    //    if (answer.Equals(true))
-    //    {
-    //        //var selectedItem = (CustomerModel)((Button)sender).BindingContext;
-    //        //var isDeleted = await data.Delete(selectedItem.Id);
-
-    //        //if (isDeleted.Equals(true))
-    //        //{
-    //        //    await DisplayAlert("Information", "Record deleted!!", "Ok");
-    //        //}
-    //    }
-    //}
 }

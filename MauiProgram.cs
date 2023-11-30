@@ -20,8 +20,8 @@ namespace MauiApp1
 #if DEBUG
     		builder.Logging.AddDebug();
 #endif
-            //builder.Services.AddSingleton<ICustomerAppService, CustomerAppService>();
-            builder.Services.AddSingleton<CustomerAppService>();
+            builder.Services.AddSingleton<ICustomerAppService, CustomerAppService>();
+            //builder.Services.AddSingleton<CustomerAppService>();
             builder.Services.AddSingleton<MainPage>();
 
             return builder.Build();

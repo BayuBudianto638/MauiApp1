@@ -13,8 +13,6 @@ namespace MauiApp1.ViewModels
         private readonly ICustomerAppService _customerAppService;
         private readonly INavigation _navigation;
 
-        //public ICommand SetOperatingCustomerCommand { get; set; }
-
         public CustomerViewModel(ICustomerAppService customerAppService, INavigation navigation)
         {
             _customerAppService = customerAppService;
@@ -71,12 +69,10 @@ namespace MauiApp1.ViewModels
             {
                 if (OperatingCostumer.Id == 0)
                 {
-                    // Create customer
                     var (isCreate, isMsg) = await _customerAppService.Save(OperatingCostumer);
                 }
                 else
                 {
-                    // Update customer
                     var isUpdate = await _customerAppService.Update(OperatingCostumer);
                     if (isUpdate)
                     {
